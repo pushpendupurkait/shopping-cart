@@ -24,16 +24,17 @@
         {{item.quantity}}
         <a class="glyphicon glyphicon-plus custom-cursor"  ng-click="add(item.PId)"></a>
       </td>
-      <td><button ng-click="deleteItem(item.PId)">Delete Item</button></td>
+      <td><button class="btn btn-danger" ng-click="deleteItem(item.PId)">Remove Item</button></td>
     </tr>
   </tbody>
 </table>
 
   <h2>Total Items {{totalItems}}</h2>
   <h2>Total Bill  {{totalAmount | currency:"Rs. "}}</h2>
-  <button ng-click="buy()" class="custom-btn btn btn-primary">Buy now</button>
+  <button class="btn btn-info" ng-click="buy()" class="custom-btn btn btn-primary">Buy now</button>
 </div>
-
+<toaster-container toaster-options="{'time-out': 3000, 'close-button': true}">
+</toaster-container>
 <div class="row" ng-if=items.length==0>
   <div class=jumbotron>
     <h2>Your shopping cart is empty</h2>

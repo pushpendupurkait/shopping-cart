@@ -1,6 +1,6 @@
-var app = angular.module('shoppingList',['ngRoute']);
+var app = angular.module('shoppingList',['ngRoute','toaster']);
 
-app.controller('shoppingListCtrl',['$scope',function($scope){
+app.controller('shoppingListCtrl',['$scope','toaster',function($scope,toaster){
   var itemss = [
     {'PId':'001','name': "Philips Trimmer", 'image':"/images/philips-trimmer.jpg",'price': 1999,'description':"It's a trimmer, produced by Philips."},
     {'PId':'002','name': "Philips Hair Dryer", 'image':"/images/philips-hair-dryer.jpg",'price': 600,'description':"It's a hair dryer, produced by Philips."},
@@ -24,7 +24,8 @@ app.controller('shoppingListCtrl',['$scope',function($scope){
     }
 
     itemsInCart.push(curItem);
-    localStorage.setItem('itemsInCart',angular.toJson(itemsInCart))
+    localStorage.setItem('itemsInCart',angular.toJson(itemsInCart));
+    toaster.pop('info', curItem.name+" added successfully", "Click on cart to see the final amount.");
   }
 
   function checkDuplicate(list, PId){

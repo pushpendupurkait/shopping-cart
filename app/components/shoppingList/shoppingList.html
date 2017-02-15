@@ -1,5 +1,7 @@
 
 <div class="row">
+  <toaster-container toaster-options="{'time-out': 3000, 'close-button': true}">
+  </toaster-container>
   <div class="col-md-4 col-xs-12 form-group">
   <label for="search">Search:</label>
   <input ng-model="search" type="text" class="form-control" id="search">
@@ -15,7 +17,7 @@
     </div>
     <div class="col-md-2 col-xs-2">{{item.price | currency:"Rs."}}</div>
     <div class="col-md-2 col-xs-2">
-      <button ng-click=addItem(item.PId)>Add to cart</button>
+      <button ng-click=addItem(item.PId) class="btn btn-info">Add to cart</button>
     </div>
   </div>
 </div>

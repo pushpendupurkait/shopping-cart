@@ -1,6 +1,6 @@
-var app = angular.module('shoppingCart',['ngRoute']);
+var app = angular.module('shoppingCart',['ngRoute','toaster']);
 
-app.controller('shoppingCartCtrl',['$scope',function($scope){
+app.controller('shoppingCartCtrl',['$scope','toaster',function($scope, toaster){
   var itmesInCart= JSON.parse(localStorage.getItem('itemsInCart')) || [];
   $scope.items=itmesInCart;
   $scope.totalItems = getTotalItems($scope.items);
@@ -13,10 +13,12 @@ app.controller('shoppingCartCtrl',['$scope',function($scope){
     $scope.items=JSON.parse(localStorage.getItem('itemsInCart')) || [];
     $scope.totalItems = getTotalItems($scope.items);
     $scope.totalAmount = getTotalAmount($scope.items);
+    toaster.pop('info', "Item Removed.", "");
   }
 
   $scope.buy =function(){
-    alert("Your order is received successfully");
+    toaster.pop('success', "Your order is received successfully", "");
+
   }
 
   $scope.remove = function(PId){
@@ -31,6 +33,7 @@ app.controller('shoppingCartCtrl',['$scope',function($scope){
     localStorage.setItem('itemsInCart',angular.toJson($scope.items)); //persisting to localstorage
     $scope.totalItems = getTotalItems($scope.items);
     $scope.totalAmount = getTotalAmount($scope.items);
+    toaster.pop('info', "Item Quantity Decreased.", "");
   }
 
   $scope.add = function(PId){
@@ -42,6 +45,7 @@ app.controller('shoppingCartCtrl',['$scope',function($scope){
     localStorage.setItem('itemsInCart',angular.toJson($scope.items)); //persisting to localstorage
     $scope.totalItems = getTotalItems($scope.items);
     $scope.totalAmount = getTotalAmount($scope.items);
+    toaster.pop('info', "Item Quantity Increased.", "");
   }
 
   function getTotalItems(arr){

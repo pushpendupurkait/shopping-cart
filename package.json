@@ -14,8 +14,8 @@
     "bower": "^1.8.0",
     "express": "^4.14.1"
   },
-  "repository" :
-  { "type" : "git"
-  , "url" : "https://github.com/pushpendupurkait/shopping-cart.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pushpendupurkait/shopping-cart.git"
   }
 }
