@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="shoppingCart">
+  <head>
+    <title>Angular Js</title>
+    <link rel="stylesheet" href='bower_components/components-font-awesome/css/font-awesome.min.css'/>
+    <link rel="stylesheet" href='bower_components/bootstrap/dist/css/bootstrap.min.css'/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="app/style/style.css" rel="stylesheet">
+  </head>
+  <body class="custom-font">
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#!/home">
+              <img class="logo-image" alt="Brand" src="/images/logo.png">
+            </a>
+            <h2 class="navbar-text">Angular Store</h2>
+          </div>
+          <p class="navbar-text navbar-right">
+            <a href="#!/cart">
+              <i class="fa fa-shopping-cart fa-3x" style="margin-right:10px;" aria-hidden="true"></i>
+            </a>
+          </p>
+        </div>
+      </nav>
+      <nav>
+        <ul class="nav nav-pills">
+          <li role="presentation" class="active"><a href="#!/home">Home</a></li>
+          <li role="presentation"><a href="#">Profile</a></li>
+          <li role="presentation"><a href="#">Messages</a></li>
+        </ul>
+      </nav>
+      <div ui-view></div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js" ></script>
+    <script src="bower_components/angular-route/angular-route.min.js" ></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app/components/shoppingList/shoppingList.js"></script>
+    <script src="app/components/shoppingCart/shoppingCart.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>

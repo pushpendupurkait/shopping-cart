@@ -1,0 +1,24 @@
+{
+  "name": "shopping-cart",
+  "description": "A shopping web application.",
+  "main": "index.js",
+  "authors": [
+    "pushpendu"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "jquery": "^3.1.1",
+    "angular-route": "^1.6.2",
+    "angular-ui-router": "ui-router#^0.4.2",
+    "components-font-awesome": "^4.7.0"
+  }
+}

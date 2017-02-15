@@ -1,0 +1,17 @@
+{
+  "name": "shopping-cart",
+  "version": "1.0.0",
+  "description": "A shopping web application.",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node app",
+    "postinstall": "bower install"
+  },
+  "author": "pushpendu",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "express": "^4.14.1"
+  }
+}
