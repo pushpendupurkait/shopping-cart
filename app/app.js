@@ -1,9 +1,4 @@
-var app = angular.module('shoppingCart',['ui.router','shoppingList','shoppingCart2']);
-
-// app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-//   $locationProvider.hashPrefix('!');
-//   $routeProvider.otherwise({redirectTo: '/view1'});
-// }])
+var app = angular.module('shoppingOnline',['ui.router','shoppingList','shoppingCart']);
 
 app.config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/home');
@@ -14,9 +9,9 @@ app.config(function($stateProvider, $urlRouterProvider){
             templateUrl: 'app/components/shoppingList/shoppingList.html',
             controller: 'shoppingListCtrl',
     })
-    .state('about',{
+    .state('cart',{
       url: '/cart',
       templateUrl: 'app/components/shoppingCart/shoppingCart.html',
-      controller : 'shoppingCartCtrll'
+      controller : 'shoppingCartCtrl'
     })
 });

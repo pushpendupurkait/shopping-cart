@@ -1,6 +1,6 @@
-var app = angular.module('shoppingCart2',['ngRoute']);
+var app = angular.module('shoppingCart',['ngRoute']);
 
-app.controller('shoppingCartCtrll',['$scope',function($scope){
+app.controller('shoppingCartCtrl',['$scope',function($scope){
   var itmesInCart= JSON.parse(localStorage.getItem('itemsInCart')) || [];
   $scope.items=itmesInCart;
   $scope.totalItems = getTotalItems($scope.items);
@@ -9,7 +9,7 @@ app.controller('shoppingCartCtrll',['$scope',function($scope){
   $scope.deleteItem = function(PId){
     var itemsInCart = JSON.parse(localStorage.getItem('itemsInCart')) || [];
     itemsInCart = itemsInCart.filter(item => item.PId != PId)
-    localStorage.setItem('itemsInCart',angular.toJson(itemsInCart));
+    localStorage.setItem('itemsInCart',angular.toJson(itemsInCart)); //persisting to localstorage
     $scope.items=JSON.parse(localStorage.getItem('itemsInCart')) || [];
     $scope.totalItems = getTotalItems($scope.items);
     $scope.totalAmount = getTotalAmount($scope.items);
@@ -28,17 +28,18 @@ app.controller('shoppingCartCtrll',['$scope',function($scope){
         }
       }
     })
-    localStorage.setItem('itemsInCart',angular.toJson($scope.items));
+    localStorage.setItem('itemsInCart',angular.toJson($scope.items)); //persisting to localstorage
     $scope.totalItems = getTotalItems($scope.items);
     $scope.totalAmount = getTotalAmount($scope.items);
   }
+
   $scope.add = function(PId){
     $scope.items.map(function(item){
       if(item.PId == PId){
         item.quantity++;
       }
     })
-    localStorage.setItem('itemsInCart',angular.toJson($scope.items));
+    localStorage.setItem('itemsInCart',angular.toJson($scope.items)); //persisting to localstorage
     $scope.totalItems = getTotalItems($scope.items);
     $scope.totalAmount = getTotalAmount($scope.items);
   }
